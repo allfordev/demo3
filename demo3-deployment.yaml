@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo3-deply
+  labels:
+    app: demo3
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo3
+  template:
+    metadata:
+      labels:
+        app: demo3
+    spec:
+      containers:
+      - name: demo3
+        image: allfordev/demo3v3
+        ports:
+        - containerPort: 8080

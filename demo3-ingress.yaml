@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: demo3-ingress
+spec:
+  rules:
+  - host: dans-macbook-pro
+    http:
+      paths:
+      - backend:
+          serviceName: demo3-service
+          servicePort: 8080
